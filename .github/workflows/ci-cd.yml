@@ -32,6 +32,7 @@ jobs:
           key: ${{ secrets.KEY_PATH }}
           source: "dist/"
           target: "~/nestjs-app/"
+          debug: true
 
       - name: SSH to EC2 and restart application
         uses: appleboy/ssh-action@master
