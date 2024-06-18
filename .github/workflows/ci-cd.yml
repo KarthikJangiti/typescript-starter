@@ -31,7 +31,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.KEY_PATH }}
           source: "dist/"
-          target: "~/nestjs-app/"
+          target: "~/typescript-starter-app/"
           debug: true
 
       - name: SSH to EC2 and restart application
@@ -41,5 +41,5 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.KEY_PATH }}
           script: |
-            cd ~/nestjs-app
-            pm2 restart nest-app || pm2 start dist/main.js --name nest-app
+            cd ~/typescript-starter-app
+            pm2 restart typescript-starter-app || pm2 start dist/main.js --name typescript-starter-app
